@@ -18,11 +18,11 @@ def speak(audio):
 def wishMe():
 
   hour = int(datetime.datetime.now().hour)
- # print(hour)
+  print(hour)
   if hour>=0 and hour<12:
       speak('Good morning sir!')
 
-  elif hour>=12 and hour<4:
+  elif hour>=12 and hour<16:
       speak('Good afternoon sir!')
 
   else:
@@ -46,6 +46,7 @@ def userInput():
     except Exception as e:
        # print(e)
         print('Say that again.... , i didnt get')
+        speak("say that again....,i didn't get")
         return "None"
     return query
 
@@ -83,4 +84,5 @@ if __name__ == '__main__':
               speak(f"Sir,the time is{strTime}")
 
           elif 'quit' in query:
+              speak("Okay thank you very much sir,connect with me whenever thers is need")
               exit()
